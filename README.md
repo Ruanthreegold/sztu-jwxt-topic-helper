@@ -3,14 +3,13 @@
 > 在「毕业设计 → 学生选题」页面点三下，把全部课题（列表 + 明细）导成一张 Excel。
 > 为选毕设课题时不用一条条点开「课题明细」而写，现分享给需要的同学。
 
-<img width="253" height="571" alt="image" src="https://github.com/user-attachments/assets/53c8aa5a-ffcc-4fc1-ac8b-9aebc7626887" />
-![截图：面板](screenshots/panel.png)
+![截图：助手面板](screenshots/panel.png)
 
 ---
 
 ## 这是什么
 
-一个油猴脚本（Tampermonkey userscript）。打开SZTU教务系统的学生毕业选题页，右下角出现一个小面板：
+一个油猴脚本（Tampermonkey userscript）。打开 SZTU 教务系统的学生毕业选题页，右下角出现一个小面板：
 
 - **① 抓列表** — 自动按 `pageIndex` 翻页，约 10 秒
 - **② 抓明细** — 并发 3 / 每条间隔 180ms，300+ 条约 2~3 分钟
@@ -36,12 +35,12 @@
 2. 点这个链接，Tampermonkey 会自动弹出安装页，点「安装」即可：
 
    ```
-   https://cdn.jsdelivr.net/gh/Ruanthreegold/jwxt-topic-helper@main/jwxt-topic-helper.user.js
+   https://cdn.jsdelivr.net/gh/Ruanthreegold/sztu-jwxt-topic-helper@main/jwxt-topic-helper.user.js
    ```
 
    > 国内访问 jsDelivr 通常比 `raw.githubusercontent.com` 稳定。两个链接都放这里备用：
-   > - jsDelivr：`https://cdn.jsdelivr.net/gh/Ruanthreegold/jwxt-topic-helper@main/jwxt-topic-helper.user.js`
-   > - Raw：`https://raw.githubusercontent.com/Ruanthreegold/jwxt-topic-helper/main/jwxt-topic-helper.user.js`
+   > - jsDelivr：`https://cdn.jsdelivr.net/gh/Ruanthreegold/sztu-jwxt-topic-helper@main/jwxt-topic-helper.user.js`
+   > - Raw：`https://raw.githubusercontent.com/Ruanthreegold/sztu-jwxt-topic-helper/main/jwxt-topic-helper.user.js`
 
 ![截图：Tampermonkey 安装页](screenshots/install.png)
 
@@ -62,9 +61,23 @@
 
 ## 使用
 
-1. 打开教务系统 → 毕业设计 → **学生选题**，等列表显示出来
-2. 右下角面板依次点击 **① 抓列表 → ② 抓明细 → ③ 导出 Excel**
-3. 用 Excel 的筛选功能按方向 / 关键词 / 教师筛
+**第 1 步：进入页面**
+
+打开教务系统，从左侧菜单进入「实践环节 → 毕业设计 → 学生选题」，等下面的课题列表显示出来：
+
+![截图：从左侧菜单进入毕业设计 → 学生选题](https://github.com/user-attachments/assets/53c8aa5a-ffcc-4fc1-ac8b-9aebc7626887)
+
+进去之后，页面右下角会多出一个小小的「选题抓取助手」面板（就是页首那张图）。
+
+**第 2 步：点三下**
+
+1. **① 抓列表** — 约 10 秒，面板会显示「列表 第 N 页…」
+2. **② 抓明细** — 300+ 条约 2~3 分钟，显示「明细 12/307」这样的进度
+3. **③ 导出 Excel** — 下载 `选题清单.xlsx`
+
+**第 3 步：在 Excel 里筛**
+
+用 Excel 的筛选功能，按方向 / 关键词 / 教师筛。
 
 控制台等价命令：
 
@@ -86,7 +99,7 @@ __JWH.stop()          // 停止
 - **不绑账号**：代码里没有任何学号、姓名、token、session 之类的信息
 - **不改数据**：只查询列表页和明细页，**不会**替你提交选题、不会改动任何状态
 - **不外发**：全脚本只有 1 处 `fetch()`，目标是当前站点自己的 form action 与 `to_mx()` 给出的相对地址，没有任何第三方域名
-- **不落地**：不读写 `localStorage` / `gitcookie` / `indexedDB`，抓到的数据只在页面内存里，点导出才写成你本地的文件
+- **不落地**：不读写 `localStorage` / `cookie` / `indexedDB`，抓到的数据只在页面内存里，点导出才写成你本地的文件
 - **不加载外部代码**：没有 `@require` / `@resource` / `@connect`
 - **限定站点**：`@match` 只含本校教务域名，且有 `@noframes`
 - **联系方式默认隐藏**：教师手机号 / 办公电话导出时替换为「（已隐藏）」，需在面板手动勾选
