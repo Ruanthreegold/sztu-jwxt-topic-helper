@@ -27,12 +27,12 @@
 - **已验证**：深圳技术大学 `jwxt.sztu.edu.cn`（2026-11，307 条实测）
 - **不能跨校**：`kt_Mx_14655` 这类 form id 与菜单路径是本校这套系统的，换学校需改 `CFG`
 
-## 安装
+## 安装（三种方式，任选其一）
 
-### 方式一：点链接直接装（推荐）
+### 方式一：点链接直接装
 
 1. 先给浏览器装好 [Tampermonkey](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)（Edge）或 [Chrome 版](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-2. 点这个链接，Tampermonkey 会自动弹出安装页：
+2. 点这个链接，Tampermonkey 会自动弹出安装页，点「安装」即可：
 
    ```
    https://cdn.jsdelivr.net/gh/Ruanthreegold/jwxt-topic-helper@main/jwxt-topic-helper.user.js
@@ -42,13 +42,22 @@
    > - jsDelivr：`https://cdn.jsdelivr.net/gh/Ruanthreegold/jwxt-topic-helper@main/jwxt-topic-helper.user.js`
    > - Raw：`https://raw.githubusercontent.com/Ruanthreegold/jwxt-topic-helper/main/jwxt-topic-helper.user.js`
 
-### 方式二：手动粘贴（最稳，不受网络影响）
+![截图：Tampermonkey 安装页](screenshots/install.png)
+
+### 方式二：把脚本文件拖进油猴（最省事）
+
+1. 先把 `jwxt-topic-helper.user.js` 存到本地任意文件夹
+2. 浏览器点 Tampermonkey 图标 → **管理面板**
+3. 用鼠标把那个 `.js` 文件**直接拖进管理面板的页面里** → 弹出安装页 → 点「安装」
+
+> 注意区分：拖到**油猴管理面板**里才装得上；如果在资源管理器里直接双击文件，
+> 有些浏览器会把它当文本打开，看着像坏了。
+
+### 方式三：手动粘贴（最稳，不受网络影响）
 
 1. 点 Tampermonkey 图标 → **管理面板** → 左下角「**+**」新建脚本
 2. 删掉编辑器里的示例代码，把 [`jwxt-topic-helper.user.js`](./jwxt-topic-helper.user.js) 全文粘贴进去
 3. `Ctrl + S` 保存
-
-> ⚠️ 不要直接双击 `.user.js` 文件，浏览器会当文本打开。
 
 ## 使用
 
