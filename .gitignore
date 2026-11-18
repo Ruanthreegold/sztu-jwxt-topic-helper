@@ -1,0 +1,16 @@
+# 抓取产生的数据，含教师手机号等个人信息，绝对不要提交
+选题*.json
+选题*.csv
+选题*.xlsx
+*.xlsx
+*.csv
+
+# 推荐表 / 分析结果
+推荐选题*.xlsx
+
+# 依赖与临时文件
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
