@@ -3,6 +3,7 @@
 > 在「毕业设计 → 学生选题」页面点三下，把全部课题（列表 + 明细）导成一张 Excel。
 > 为选毕设课题时不用一条条点开「课题明细」而写，现分享给需要的同学。
 
+<img width="253" height="571" alt="image" src="https://github.com/user-attachments/assets/53c8aa5a-ffcc-4fc1-ac8b-9aebc7626887" />
 ![截图：面板](screenshots/panel.png)
 
 ---
